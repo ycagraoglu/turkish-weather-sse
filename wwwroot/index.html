@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Türkiye Hava Durumu - Gerçek Zamanlı</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Türkiye Hava Durumu</h1>
+            <p class="subtitle">Server-Sent Events ile Gerçek Zamanlı Takip</p>
+            <div class="connection-status">
+                <span class="status-indicator" id="statusIndicator"></span>
+                <span class="status-text" id="statusText">Bağlanıyor...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="weather-grid" id="weatherGrid">
+                <!-- İstanbul Kartı -->
+                <div class="weather-card" id="istanbul-card">
+                    <div class="city-header">
+                        <h2><span class="city-icon">🏙️</span> İstanbul</h2>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-main">
+                            <span class="weather-icon">⏳</span>
+                            <span class="temperature">--°C</span>
+                        </div>
+                        <div class="weather-description">Yükleniyor...</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">💨 Rüzgar</span>
+                            <span class="detail-value">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">💧 Nem</span>
+                            <span class="detail-value">--%</span>
+                        </div>
+                    </div>
+                    <div class="last-update">Son güncelleme: --</div>
+                </div>
+
+                <!-- Bursa Kartı -->
+                <div class="weather-card" id="bursa-card">
+                    <div class="city-header">
+                        <h2><span class="city-icon">🌳</span> Bursa</h2>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-main">
+                            <span class="weather-icon">⏳</span>
+                            <span class="temperature">--°C</span>
+                        </div>
+                        <div class="weather-description">Yükleniyor...</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">💨 Rüzgar</span>
+                            <span class="detail-value">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">💧 Nem</span>
+                            <span class="detail-value">--%</span>
+                        </div>
+                    </div>
+                    <div class="last-update">Son güncelleme: --</div>
+                </div>
+
+                <!-- Eskişehir Kartı -->
+                <div class="weather-card" id="eskisehir-card">
+                    <div class="city-header">
+                        <h2><span class="city-icon">🎓</span> Eskişehir</h2>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-main">
+                            <span class="weather-icon">⏳</span>
+                            <span class="temperature">--°C</span>
+                        </div>
+                        <div class="weather-description">Yükleniyor...</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">💨 Rüzgar</span>
+                            <span class="detail-value">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">💧 Nem</span>
+                            <span class="detail-value">--%</span>
+                        </div>
+                    </div>
+                    <div class="last-update">Son güncelleme: --</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🔄 Her 10 saniyede otomatik güncellenir</p>
+            <p>📡 Veri kaynağı: <a href="https://open-meteo.com" target="_blank">Open-Meteo API</a></p>
+        </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
