@@ -4,6 +4,7 @@ using turkish_weather_sse.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // CORS policy ekle
+// Not: Üretim ortamında AllowAnyOrigin yerine belirli origin'ler kullanılmalıdır
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>

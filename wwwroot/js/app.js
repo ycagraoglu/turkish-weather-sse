@@ -93,11 +93,19 @@ function updateConnectionStatus(status, text) {
 }
 
 /**
+ * Türkçe karakterleri İngilizce karşılıklarına dönüştürür
+ */
+function normalizeTurkishChars(text) {
+    const turkishChars = { 'ı': 'i', 'ş': 's', 'ğ': 'g', 'ü': 'u', 'ö': 'o', 'ç': 'c', 'İ': 'i', 'Ş': 's', 'Ğ': 'g', 'Ü': 'u', 'Ö': 'o', 'Ç': 'c' };
+    return text.toLowerCase().split('').map(char => turkishChars[char] || char).join('');
+}
+
+/**
  * Hava durumu kartlarını günceller
  */
 function updateWeatherCards(weatherDataArray) {
     weatherDataArray.forEach(data => {
-        const cityKey = data.city.toLowerCase().replace('ı', 'i').replace('ş', 's').replace('ğ', 'g').replace('ü', 'u').replace('ö', 'o').replace('ç', 'c');
+        const cityKey = normalizeTurkishChars(data.city);
         const card = document.getElementById(`${cityKey}-card`);
         
         if (card) {

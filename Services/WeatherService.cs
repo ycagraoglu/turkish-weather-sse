@@ -35,7 +35,7 @@ public class WeatherService
             // Paralel API çağrıları (Task.WhenAll)
             var tasks = _cities.Select(city => GetCityWeatherAsync(city.Name, city.Lat, city.Lon, city.Icon));
             var results = await Task.WhenAll(tasks);
-            return results.Where(r => r != null).ToList()!;
+            return results.OfType<WeatherData>().ToList();
         }
         catch (Exception ex)
         {
